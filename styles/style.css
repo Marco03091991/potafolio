@@ -1,0 +1,152 @@
+ /* importando la fuente a utilizar */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{ /* asi se declaran variables este caso guardamos los colores y las fuentes*/
+/* optimiza el codigo ya que de manera facil puedo cambiar la convinacion de la pagina podemos usar las paletas de https://colorhunt.co/*/
+    --color-primerio: #000000; 
+    --color-segundario: #00DFA2;
+    --color-terciario: #FDDE55;
+    --color-hover: #272727;
+
+    --fuente-montserrat: "Montserrat", sans-serif;
+    --fuente-krona: "krona one", sans-serif
+}
+*{   /* se aplican propiedades generales*/
+
+    padding: 0; 
+    margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: var(--color-primerio);
+    color: var(--color-segundario);
+   /* height: 100vh;*/ /*se quita para que se ajuste la pagina*/
+    
+}
+
+.header{
+padding: 2% 0% 0% 15%;
+}
+
+.header__menu{
+    display: flex;
+    gap: 80px;
+
+}
+
+.header__menu__link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem; /* Estaba en px pero se actualiza a rem: 16px es = a 1 REM */
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+    
+}
+
+.presentacion{ /* clase padre o  contenedor que contiene al resto*/
+
+    display: flex; /* ajusta despendiendo el tamaño de la pantalla*/
+    align-items: center;
+    justify-content: space-between ;
+    padding: 5% 15%; /* ajusta la  margen de separacion vertical y orizontal*/
+    gap: 82px;
+}
+.presentacion__contenido{
+
+    width: 50%; /* se cambia de 615 al 50% prcentaje para que se adapte a la pantalla*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* separador entre elementos que esten dentro de la clase*/
+}
+
+.presentacion__contenido__titulo{
+
+    font-size: 2.25rem; 
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destacado{  /* llamado de la clase  titulo-destacado para resaltar ese color*/ 
+    color: var(--color-terciario);
+
+}
+
+.presentacion__contenido__parrafo{
+
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion__enlaces{
+
+    display: flex;
+    justify-content: space-between; /* crea espacio entre los elementos, en este caso lo que esta en en el div llamado presentacion__enlaces*/ 
+    flex-direction: column; /* alenea los botones en lolumnas o verticalmente*/
+    align-items: center;
+    gap: 32px; /* Separacion entre cada boton o elementos que estan en el div*/  
+}
+
+.presentacion__enlaces__subtiitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+.presentacion__enlaces__link{
+
+    width: 50%; /* tamaño DE largo horizontal*/
+    /*background-color: #22D4FD; /* color, en este caso del boton */
+    text-align: center;
+    padding: 21.5px 0; /* espacio entre el elemento y el borde */
+    border-radius: 8px;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600; /* grosor de la letra */
+    text-decoration: none; /* quitamos sub rayado */
+    color: var(--color-segundario);
+    border: 2px solid var(--color-terciario);    /* forma del boton su grosor del borde en lenea solida y color*/
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.presentacion__enlaces__link:hover{/* evento del boton que cuendo este encima el raton se escuresca*/
+
+    background-color: var(--color-hover);
+}
+
+.presentacion__imagen{
+
+    width: 50%;
+}
+.footer{
+    background-color: var(--color-terciario);
+    padding: 1.5rem;
+    color: var(--color-primerio);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+@media (max-width: 1200px) /* Propiedad para configurar las pantalla para moviles o pequiñas*/{
+    .header{
+        padding: 10%;
+    }
+.header__menu{
+
+    justify-content: center;
+}
+    .presentacion{
+
+    flex-direction: column-reverse; /* Como todo el contenido esta en la clase prentacion entonce le decimos que se organice en columna*/
+    padding: 5%;
+}
+.presentacion__contenido{
+    width: auto;
+}
+    
+}
